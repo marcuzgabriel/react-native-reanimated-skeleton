@@ -1,3 +1,10 @@
+# 1.0.0 (2023-09-07)
+
+
+### Features
+
+* Welcome to reanimated 3.0 ([27e3e14](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/27e3e14e2e576a11267c62e9173af01e79fb6286))
+
 ## [1.1.6](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.1.5...v1.1.6) (2023-09-07)
 
 
