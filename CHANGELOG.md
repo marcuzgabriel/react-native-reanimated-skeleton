@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.0.0...v1.0.1) (2023-09-07)
+
+
+### Bug Fixes
+
+* peerDependencies ([dec25be](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/dec25bee07d74153b3d5ac2fb869e8b96b922ffb))
+
 # 1.0.0 (2023-09-07)
 
 
