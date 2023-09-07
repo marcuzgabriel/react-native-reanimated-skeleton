@@ -1,0 +1,49 @@
+name: Automatic semantic versioning
+on:
+  push:
+    branches: [main, develop, alpha, beta]
+jobs:
+  versioning:
+    name: Semantic versioning
+    runs-on: ubuntu-latest
+    outputs:
+      current_version: ${{ steps.current_version.outputs.CURRENT_VERSION }}
+      next_version: ${{ steps.next_version.outputs.NEXT_VERSION }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Setting up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+          registry-url: 'https://npm.pkg.github.com'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Install plugins
+        run: yarn add -D @semantic-release/changelog @semantic-release/git @semantic-release/exec -W
+      
+      - name: Print current version
+        id: current_version
+        run: echo "CURRENT_VERSION=$(jq -r ".version" ./package.json)" >> $GITHUB_OUTPUT;
+      
+      - name: Run semantic release
+        id: next_version
+        run: yarn semantic-release --extends ./releaserc.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  print:
+      needs: versioning
+      runs-on: ubuntu-latest
+      steps:
+        - name: Print version numbers
+          run: |
+            echo "Current version is: ${{ needs.versioning.outputs.CURRENT_VERSION }}"
+            echo "Next version is: ${{ needs.versioning.outputs.NEXT_VERSION }}"

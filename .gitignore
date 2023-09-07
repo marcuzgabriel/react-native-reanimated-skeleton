@@ -1,0 +1,82 @@
+.env
+.sonarlint
+.sonar_lock
+.scannerwork
+.build-tools
+coverage
+install.log
+/screenshots
+/.build-tools/
+/android/.gradle
+/android/.idea
+/android/.settings
+/android/app/build/*/**
+/android/app/.cxx/**
+/android/*/**.jks
+
+# OSX
+changes.txt
+
+# Xcode
+ios/build/
+ios/artifacts/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.dSYM.zip
+*.xcuserstate
+
+# Android/IntelliJ
+android/.gradle
+android/.idea
+android/.settings
+android/app/.cxx/**
+android/app/release/app-release.aab
+android/app/build/
+.idea
+.gradle
+local.properties
+*.iml
+*.hprof
+
+# node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
+!debug.keystore
+
+# fastlane
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
+
+# Ruby / CocoaPods
+ios/Pods/
+vendor/bundle/
+appcenter/*
+test-report.xml
+
+# TypeScript
+dist
+/lib
