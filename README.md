@@ -6,19 +6,6 @@ React native reanimated skeleton, a simple yet fully customizable component made
 
 ***THIS REPO IS AN UPGRADE FROM REANIMATED V1 to V3 inspired by https://github.com/alexZajac/react-native-skeleton-content ***
 
-### Features
-
-- The package has been rewritten to hooks and worklets and is using the declarative [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated) package for animations
-- It now supports nested layouts for children bones
-- It finally supports percentages dimensions for bones, for any type of animation!
-
-- [React Native Reanimated Skeleton](#react-native-reanimated-skeleton)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Props](#props)
-  - [Examples](#examples)
-  - [Playground](#playground)
-
 ### Installation
 
 `npm install react-native-reanimated-skeleton`
@@ -52,6 +39,45 @@ export default function Placeholder() {
     </Skeleton>
   );
 }
+```
+- **With children layout example**: More info can be found in the example folder
+
+```jsx
+<Skeleton
+  isLoading={true}
+  containerStyle={styles.container}
+  layout={[
+    {
+      width: 325,
+      height: 325,
+      borderRadius: 34,
+      marginBottom: 16,
+    },
+    {
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      children: [
+        {
+          width: 119,
+          height: 19,
+          borderRadius: 16,
+          marginBottom: 8,
+        },
+        {
+          width: 234,
+          height: 42,
+          borderRadius: 16,
+        },
+      ],
+    },
+  ]}
+>
+  <>
+    <Text style={styles.normalText}>Your content</Text>
+    <Text style={styles.bigText}>Other content</Text>
+  </>
+</Skeleton>
 ```
 
 3.  Then simply sync the prop `isLoading` to your state to show/hide the Skeleton when the assets/data are available to the user.
