@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.0.1...v1.0.2) (2023-09-08)
+
+
+### Bug Fixes
+
+* Comments to complex areas ([0894deb](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/0894deb97b464895e6852812c8f845ff75a14294))
+
 ## [1.0.1](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.0.0...v1.0.1) (2023-09-07)
 
 

@@ -2,7 +2,7 @@
   "homepage": "https://marcuzgabriel.github.io/react-native-reanimated-skeleton/",
   "name": "react-native-reanimated-skeleton",
   "author": "Marcuz Gabriel Larsen <marcuzgabriel@gmail.com>",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "scripts": {
     "align-deps": "yarn rnx-align-deps",
