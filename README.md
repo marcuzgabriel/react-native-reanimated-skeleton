@@ -4,7 +4,7 @@
 
 React native reanimated skeleton, a simple yet fully customizable component made to achieve loading animation in a Skeleton-style. Works in both iOS and Android.
 
-***THIS REPO IS AN UPGRADE FROM REANIMATED V1 to V3 inspired by https://github.com/alexZajac/react-native-skeleton-content ***
+***THIS REPO IS AN UPGRADE FROM REANIMATED V1 to V3 inspired by https://github.com/alexZajac/react-native-skeleton-content***
 
 ### Installation
 
@@ -18,7 +18,7 @@ When the main library is available you can install:
 
 ### Usage
 
-1.  Import react-native-skeleton-content:
+1.  Import react-native-reanimated-skeleton:
 
 ```javascript
 import Skeleton from 'react-native-reanimated-skeleton';
