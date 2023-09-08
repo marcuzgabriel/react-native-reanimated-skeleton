@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "declaration": false,
+    "removeComments": true,
     "preserveSymlinks": true,
     "target": "es6",
     "module": "es6",
