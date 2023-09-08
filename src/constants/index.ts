@@ -1,5 +1,5 @@
 import { StyleProp, ViewStyle } from 'react-native';
-import Animated, { Easing, SharedValue, EasingFunction } from 'react-native-reanimated';
+import { Easing, SharedValue, EasingFunction } from 'react-native-reanimated';
 
 type _animationType = 'none' | 'shiver' | 'pulse' | undefined;
 type _animationDirection =

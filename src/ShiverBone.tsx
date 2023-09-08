@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { View, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Animated, { useAnimatedStyle } from 'react-native-reanimated';
+import Animated, { SharedValue, useAnimatedStyle } from 'react-native-reanimated';
 import { useGetGradientTransform } from './worklets';
 import { useGetBoneStyles, useGetGradientSize, useGetGradientEndDirection } from './hooks';
 import type { ISkeletonContentProps, ICustomViewStyle, IComponentSize } from './constants';
@@ -12,10 +12,21 @@ type ShiverBoneProps = Pick<
 > & {
   componentSize: IComponentSize;
   boneLayout: ICustomViewStyle;
-  animationValue: Animated.SharedValue<number>;
+  animationValue: SharedValue<number>;
   index?: number | string;
 };
 
+/**
+ * ShiverBone is a component that renders a rectangle with a gradient animation.
+ * @componentSize is the size of the component.
+ * @boneLayout is the layout of the bone.
+ * @boneColor is the color of the bone.
+ * @highlightColor is the color of the highlight.
+ * @animationDirection is the direction of the animation.
+ * @animationValue is the value of the animation.
+ * @animationType is the type of the animation.
+ * @index is the index of the bone.
+ */
 const ShiverBone: React.FC<ShiverBoneProps> = ({
   componentSize,
   boneLayout,

@@ -1,19 +1,26 @@
-import Animated, { interpolate, useDerivedValue } from 'react-native-reanimated';
+import { SharedValue, interpolate, useDerivedValue } from 'react-native-reanimated';
 import { useGetPositionRange, useGetBoneDimensions } from '../worklets';
 import type { ICustomViewStyle, IComponentSize, ISkeletonContentProps } from '../constants';
 
 type UseGetGradientTransformProps = Pick<ISkeletonContentProps, 'animationDirection'> & {
   componentSize: IComponentSize;
   boneLayout: ICustomViewStyle;
-  animationValue: Animated.SharedValue<number>;
+  animationValue: SharedValue<number>;
 };
 
+/**
+ * Provides the animation values for the gradient transform
+ * @componentSize is the size of the component
+ * @boneLayout is the layout of the bone
+ * @animationDirection is the direction of the animation
+ * @animationValue is the value of the animation
+ */
 export const useGetGradientTransform = ({
   componentSize,
   boneLayout,
   animationDirection,
   animationValue,
-}: UseGetGradientTransformProps): Animated.SharedValue<{
+}: UseGetGradientTransformProps): SharedValue<{
   translateX?: number;
   translateY?: number;
   rotate?: string;

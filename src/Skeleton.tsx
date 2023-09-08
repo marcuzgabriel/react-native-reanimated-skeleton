@@ -18,7 +18,20 @@ import {
 } from './constants';
 import { useLayout, useGetBones } from './hooks';
 
-function SkeletonContent({
+/**
+ * Skeleton is a component that renders a skeleton of a component based on the layout.
+ * @containerStyle is the style of the container.
+ * @duration is the duration of the animation.
+ * @easing is the easing of the animation.
+ * @layout is the layout of the components.
+ * @animationType is the type of the animation.
+ * @animationDirection is the direction of the animation.
+ * @isLoading is the state of the animation visibility.
+ * @boneColor is the color of the bone.
+ * @highlightColor is the color of the highlight.
+ * @children is the children of the component / the content that should be visible after loading.
+ */
+const Skeleton: React.FC<ISkeletonContentProps> = ({
   containerStyle = styles.container,
   duration = DEFAULT_DURATION,
   easing = DEFAULT_EASING,
@@ -29,7 +42,7 @@ function SkeletonContent({
   boneColor = DEFAULT_BONE_COLOR,
   highlightColor = DEFAULT_HIGHLIGHT_COLOR,
   children,
-}: ISkeletonContentProps) {
+}) => {
   const animationValue = useSharedValue(0);
   const loadingValue = useSharedValue(isLoading ? 1 : 0);
   const shiverValue = useSharedValue(animationType === 'shiver' ? 1 : 0);
@@ -73,7 +86,7 @@ function SkeletonContent({
   );
 }
 
-export default memo(SkeletonContent);
+export default memo(Skeleton);
 
 const styles = StyleSheet.create({
   container: {

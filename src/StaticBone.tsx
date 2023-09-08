@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
-import Animated, { useAnimatedStyle, interpolateColor } from 'react-native-reanimated';
-import type { ICustomViewStyle, ISkeletonContentProps, IComponentSize } from './constants';
+import Animated, { SharedValue, useAnimatedStyle, interpolateColor } from 'react-native-reanimated';
 import { useGetBoneStyles } from './hooks';
+import type { ICustomViewStyle, ISkeletonContentProps, IComponentSize } from './constants';
 
 type StaticBoneProps = Pick<
   ISkeletonContentProps,
@@ -9,10 +9,21 @@ type StaticBoneProps = Pick<
 > & {
   componentSize: IComponentSize;
   boneLayout: ICustomViewStyle;
-  animationValue: Animated.SharedValue<number>;
+  animationValue: SharedValue<number>;
   index?: number | string;
 };
 
+/**
+ * StaticBone is a component that renders a rectangle with a static color.
+ * @boneLayout is the layout of the bone.
+ * @boneColor is the color of the bone.
+ * @highlightColor is the color of the highlight.
+ * @animationDirection is the direction of the animation.
+ * @animationValue is the value of the animation.
+ * @animationType is the type of the animation.
+ * @index is the index of the bone.
+ * @componentSize is the size of the component.
+ */
 const StaticBone: React.FC<StaticBoneProps> = ({
   boneLayout,
   index,

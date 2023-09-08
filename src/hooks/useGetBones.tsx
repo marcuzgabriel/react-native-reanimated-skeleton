@@ -12,6 +12,10 @@ interface UseGetBonesProps {
   generalStyles: IGeneralStyles;
 }
 
+/**
+ * This hook is used to get the bones based on the layout prop.
+ * @componentSize is the size of the component.
+ */
 export const useGetBones = (componentSize: IComponentSize) => {
   const renderBone = useRenderBone(componentSize);
 

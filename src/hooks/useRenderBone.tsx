@@ -10,6 +10,10 @@ interface UseRenderBoneProps {
   index: number;
 }
 
+/**
+ * Renders the bone based on the animation type.
+ * @componentSize is the size of the component.
+ */
 export const useRenderBone = (componentSize: IComponentSize) =>
   useCallback(
     ({ generalStyles, bonesLayout, keyIndex, index }: UseRenderBoneProps) => {
