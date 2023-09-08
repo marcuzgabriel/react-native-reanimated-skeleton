@@ -128,6 +128,9 @@
       ]
     }
   },
+  "bugs": {
+    "url": "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marcuzgabriel/react-native-reanimated-skeleton.git"
