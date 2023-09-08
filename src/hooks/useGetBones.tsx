@@ -3,7 +3,11 @@ import { View } from 'react-native';
 import { useRenderBone } from '../hooks';
 import StaticBone from '../StaticBone';
 import ShiverBone from '../ShiverBone';
-import type { ICustomViewStyle, IGeneralStyles, IComponentSize } from '../constants';
+import type {
+  ICustomViewStyle,
+  IGeneralStyles,
+  IComponentSize,
+} from '../constants';
 
 interface UseGetBonesProps {
   bonesLayout: ICustomViewStyle[];
@@ -27,8 +31,10 @@ export const useGetBones = (componentSize: IComponentSize) => {
         return iterator.map((_, i) => {
           /* NOTE: Has nested layout with children */
           if (bonesLayout[i]?.children?.length) {
-            const containerPrefix = bonesLayout[i]?.key || `bone_container_${i}`;
-            const { children: childBones, ...layoutStyle } = bonesLayout[i] ?? {};
+            const containerPrefix =
+              bonesLayout[i]?.key || `bone_container_${i}`;
+            const { children: childBones, ...layoutStyle } =
+              bonesLayout[i] ?? {};
 
             return (
               <View key={containerPrefix} style={layoutStyle}>
@@ -56,7 +62,10 @@ export const useGetBones = (componentSize: IComponentSize) => {
       return Children.map(children as JSX.Element[], (child, i) => {
         const styling = child.props.style || {};
 
-        if (generalStyles.animationType === 'pulse' || generalStyles.animationType === 'none') {
+        if (
+          generalStyles.animationType === 'pulse' ||
+          generalStyles.animationType === 'none'
+        ) {
           return (
             <StaticBone
               key={prefix ? `${prefix}_${i}` : i}

@@ -5,10 +5,12 @@
   "version": "1.0.2",
   "license": "MIT",
   "scripts": {
+    "qa": "yarn format; yarn lint; yarn tsc",
+    "format": "prettier --write --list-different '**/*.{json,ts,tsx}' --loglevel warn",
+    "lint": "eslint . --fix --ext .ts,.tsx --no-cache",
     "align-deps": "yarn rnx-align-deps",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
     "type:check": "yarn tsc --noEmit",
@@ -31,11 +33,11 @@
     "!__snapshots__",
     "!*.test.js"
   ],
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*",
-    "react-native-linear-gradient": "*",
-    "react-native-reanimated": "*"
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-native": "^0.72.4",
+    "react-native-linear-gradient": "^2.8.3",
+    "react-native-reanimated": "^3.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.22.15",

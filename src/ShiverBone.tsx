@@ -1,13 +1,24 @@
 import React, { memo } from 'react';
 import { View, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Animated, { SharedValue, useAnimatedStyle } from 'react-native-reanimated';
+import Animated, {
+  SharedValue,
+  useAnimatedStyle,
+} from 'react-native-reanimated';
 import { useGetGradientTransform } from './worklets';
-import { useGetBoneStyles, useGetGradientSize, useGetGradientEndDirection } from './hooks';
-import type { ISkeletonContentProps, ICustomViewStyle, IComponentSize } from './constants';
+import {
+  useGetBoneStyles,
+  useGetGradientSize,
+  useGetGradientEndDirection,
+} from './hooks';
+import type {
+  ISkeletonProps,
+  ICustomViewStyle,
+  IComponentSize,
+} from './constants';
 
 type ShiverBoneProps = Pick<
-  ISkeletonContentProps,
+  ISkeletonProps,
   'boneColor' | 'highlightColor' | 'animationType' | 'animationDirection'
 > & {
   componentSize: IComponentSize;

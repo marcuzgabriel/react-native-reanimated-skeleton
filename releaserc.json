@@ -4,8 +4,8 @@
     "main",
     "develop",
     "next",
-    { "name": "beta", "prerelease": true},
-    { "name": "alpha", "prerelease": true}
+    { "name": "beta", "prerelease": true },
+    { "name": "alpha", "prerelease": true }
   ],
   "tagFormat": "v${version}",
   "plugins": [
@@ -13,16 +13,19 @@
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     ["@semantic-release/npm", { "npmPublish": false }],
-    ["@semantic-release/exec",
+    [
+      "@semantic-release/exec",
       {
         "verifyReleaseCmd": "echo \"NEXT_VERSION=${nextRelease.version}\" >> $GITHUB_OUTPUT"
       }
     ],
-    ["@semantic-release/git",
-    {
-      "assets": ["package.json", "CHANGELOG.md"],
-      "message": "semantic-release-bot: ${nextRelease.version} \n\n${nextRelease.notes}"
-    }],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["package.json", "CHANGELOG.md"],
+        "message": "semantic-release-bot: ${nextRelease.version} \n\n${nextRelease.notes}"
+      }
+    ],
     "@semantic-release/github"
   ]
 }

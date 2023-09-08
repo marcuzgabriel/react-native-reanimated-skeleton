@@ -1,7 +1,11 @@
 import React, { useCallback } from 'react';
 import ShiverBone from '../ShiverBone';
 import StaticBone from '../StaticBone';
-import type { ICustomViewStyle, IGeneralStyles, IComponentSize } from '../constants';
+import type {
+  ICustomViewStyle,
+  IGeneralStyles,
+  IComponentSize,
+} from '../constants';
 
 interface UseRenderBoneProps {
   generalStyles: IGeneralStyles;
@@ -17,7 +21,10 @@ interface UseRenderBoneProps {
 export const useRenderBone = (componentSize: IComponentSize) =>
   useCallback(
     ({ generalStyles, bonesLayout, keyIndex, index }: UseRenderBoneProps) => {
-      if (generalStyles.animationType === 'pulse' || generalStyles.animationType === 'none') {
+      if (
+        generalStyles.animationType === 'pulse' ||
+        generalStyles.animationType === 'none'
+      ) {
         return (
           <StaticBone
             key={keyIndex}

@@ -3,7 +3,7 @@
 declare module 'react-native-reanimated-skeleton' {
   import React from 'react';
   import { StyleProp, ViewStyle } from 'react-native';
-  import Animated, { Easing, SharedValue, EasingFunction } from 'react-native-reanimated';
+  import { SharedValue, EasingFunction } from 'react-native-reanimated';
 
   type _animationType = 'none' | 'shiver' | 'pulse' | undefined;
   type _animationDirection =
@@ -22,7 +22,7 @@ declare module 'react-native-reanimated-skeleton' {
     key?: number | string;
   }
 
-  export interface ISkeletonContentProps {
+  export interface ISkeletonProps {
     isLoading: boolean;
     layout?: ICustomViewStyle[];
     duration?: number;
@@ -53,5 +53,7 @@ declare module 'react-native-reanimated-skeleton' {
     y: number;
   }
 
-  export function Skeleton<P extends ISkeletonContentProps>(props: P): React.ReactElement<P>;
+  export function Skeleton<P extends ISkeletonProps>(
+    props: P,
+  ): React.ReactElement<P>;
 }

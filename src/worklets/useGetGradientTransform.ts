@@ -1,8 +1,19 @@
-import { SharedValue, interpolate, useDerivedValue } from 'react-native-reanimated';
+import {
+  SharedValue,
+  interpolate,
+  useDerivedValue,
+} from 'react-native-reanimated';
 import { useGetPositionRange, useGetBoneDimensions } from '../worklets';
-import type { ICustomViewStyle, IComponentSize, ISkeletonContentProps } from '../constants';
+import type {
+  ICustomViewStyle,
+  IComponentSize,
+  ISkeletonProps,
+} from '../constants';
 
-type UseGetGradientTransformProps = Pick<ISkeletonContentProps, 'animationDirection'> & {
+type UseGetGradientTransformProps = Pick<
+  ISkeletonProps,
+  'animationDirection'
+> & {
   componentSize: IComponentSize;
   boneLayout: ICustomViewStyle;
   animationValue: SharedValue<number>;
@@ -44,7 +55,10 @@ export const useGetGradientTransform = ({
         getPositionRange({ animationDirection, boneLayout }),
       );
 
-      if (animationDirection === 'verticalTop' || animationDirection === 'verticalDown') {
+      if (
+        animationDirection === 'verticalTop' ||
+        animationDirection === 'verticalDown'
+      ) {
         transform = { translateY: interpolatedPosition };
       } else {
         transform = { translateX: interpolatedPosition };
@@ -60,20 +74,26 @@ export const useGetGradientTransform = ({
       const oppositeDimension = mainDimension === width ? height : width;
       const diagonalAngle = Math.acos(mainDimension / diagonal);
       let rotateAngle =
-        animationDirection === 'diagonalDownRight' || animationDirection === 'diagonalTopLeft'
+        animationDirection === 'diagonalDownRight' ||
+        animationDirection === 'diagonalTopLeft'
           ? Math.PI / 2 - diagonalAngle
           : Math.PI / 2 + diagonalAngle;
       const additionalRotate =
-        animationDirection === 'diagonalDownRight' || animationDirection === 'diagonalTopLeft'
+        animationDirection === 'diagonalDownRight' ||
+        animationDirection === 'diagonalTopLeft'
           ? 2 * diagonalAngle
           : -2 * diagonalAngle;
       const distanceFactor = (diagonal + oppositeDimension) / 2;
-      if (mainDimension === width && width !== height) rotateAngle += additionalRotate;
+      if (mainDimension === width && width !== height)
+        rotateAngle += additionalRotate;
       const sinComponent = Math.sin(diagonalAngle) * distanceFactor;
       const cosComponent = Math.cos(diagonalAngle) * distanceFactor;
       let xOutputRange: number[];
       let yOutputRange: number[];
-      if (animationDirection === 'diagonalDownRight' || animationDirection === 'diagonalTopLeft') {
+      if (
+        animationDirection === 'diagonalDownRight' ||
+        animationDirection === 'diagonalTopLeft'
+      ) {
         xOutputRange =
           animationDirection === 'diagonalDownRight'
             ? [-sinComponent, sinComponent]

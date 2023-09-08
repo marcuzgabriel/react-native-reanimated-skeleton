@@ -1,9 +1,13 @@
 import { useCallback } from 'react';
 import { useGetBoneDimensions } from '../worklets';
-import type { ISkeletonContentProps, ICustomViewStyle, IComponentSize } from '../constants';
+import type {
+  ISkeletonProps,
+  ICustomViewStyle,
+  IComponentSize,
+} from '../constants';
 
 type UseGetGradientEndDirectionProps = Pick<
-  ISkeletonContentProps,
+  ISkeletonProps,
   'animationType' | 'animationDirection'
 > & {
   boneLayout: ICustomViewStyle;
@@ -13,22 +17,32 @@ export const useGetGradientEndDirection = (componentSize: IComponentSize) => {
   const getBoneDimensions = useGetBoneDimensions(componentSize);
 
   return useCallback(
-    ({ animationType, animationDirection, boneLayout }: UseGetGradientEndDirectionProps) => {
+    ({
+      animationType,
+      animationDirection,
+      boneLayout,
+    }: UseGetGradientEndDirectionProps) => {
       let direction = { x: 0, y: 0 };
 
       if (animationType === 'shiver') {
-        if (animationDirection === 'horizontalLeft' || animationDirection === 'horizontalRight') {
-          direction = { x: 1, y: 0 };
-        } else if (animationDirection === 'verticalTop' || animationDirection === 'verticalDown') {
-          direction = { x: 0, y: 1 };
-        } else if (
-          animationDirection === 'diagonalTopRight' ||
-          animationDirection === 'diagonalDownRight' ||
-          animationDirection === 'diagonalDownLeft' ||
-          animationDirection === 'diagonalTopLeft'
-        ) {
-          const { height, width } = getBoneDimensions(boneLayout);
-          return width && height && width > height ? { x: 0, y: 1 } : { x: 1, y: 0 };
+        switch (animationDirection) {
+          case 'horizontalLeft':
+          case 'horizontalRight':
+            direction = { x: 1, y: 0 };
+            break;
+          case 'verticalTop':
+          case 'verticalDown':
+            direction = { x: 0, y: 1 };
+            break;
+          case 'diagonalTopRight':
+          case 'diagonalDownRight':
+          case 'diagonalDownLeft':
+          case 'diagonalTopLeft': {
+            const { height, width } = getBoneDimensions(boneLayout);
+            return width && height && width > height
+              ? { x: 0, y: 1 }
+              : { x: 1, y: 0 };
+          }
         }
       }
 

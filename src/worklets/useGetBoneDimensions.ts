@@ -7,9 +7,14 @@ export const useGetBoneDimensions = (componentSize: IComponentSize) =>
       'worklet';
 
       return {
-        width: typeof boneLayout.width === 'string' ? componentSize.width : boneLayout.width ?? 0,
+        width:
+          typeof boneLayout.width === 'string'
+            ? componentSize.width
+            : boneLayout.width ?? 0,
         height:
-          typeof boneLayout.height === 'string' ? componentSize.height : boneLayout.height ?? 0,
+          typeof boneLayout.height === 'string'
+            ? componentSize.height
+            : boneLayout.height ?? 0,
       } as { width: number; height: number };
     },
     [componentSize],

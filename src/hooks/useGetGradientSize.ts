@@ -1,8 +1,12 @@
 import { useCallback } from 'react';
 import { useGetBoneDimensions } from '../worklets';
-import type { ICustomViewStyle, ISkeletonContentProps, IComponentSize } from '../constants';
+import type {
+  ICustomViewStyle,
+  ISkeletonProps,
+  IComponentSize,
+} from '../constants';
 
-type UseGetGradientSizeProps = Pick<ISkeletonContentProps, 'animationDirection'> & {
+type UseGetGradientSizeProps = Pick<ISkeletonProps, 'animationDirection'> & {
   boneLayout: ICustomViewStyle;
 };
 
