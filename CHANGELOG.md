@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.0.2...v1.1.0) (2023-09-08)
+
+
+### Features
+
+* QA and feedback ([eb11c24](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/eb11c24a2edcc4aa3e0b837fcd56093aa13e5335))
+
 ## [1.0.2](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.0.1...v1.0.2) (2023-09-08)
 
 
