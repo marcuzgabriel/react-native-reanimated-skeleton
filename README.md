@@ -8,15 +8,7 @@ React native reanimated skeleton, a simple yet fully customizable component made
 
 ### Installation
 
-React native reanimated skeleton will first be public available in the evening 8. sep. For now you can use:
-
-`npm install @marcuzgabriel/react-native-reanimated-skeleton`
-
-When the main library is available you can install:
-
 `npm install react-native-reanimated-skeleton`
-
-(both packages will be maintained)
 
 ### Usage
 
