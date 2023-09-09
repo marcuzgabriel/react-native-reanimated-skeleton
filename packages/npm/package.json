@@ -1,6 +1,6 @@
 {
   "name": "react-native-reanimated-skeleton",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
