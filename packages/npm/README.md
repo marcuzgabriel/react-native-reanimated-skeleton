@@ -1,99 +1,77 @@
-## React Native Reanimated Skeleton
+<h2 align="left">Skeleton for react native and web with the latest react-native-reanimated v3</h2>
 
-<img width="220px" align="right" src="https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/main.gif" />
+React native reanimated skeleton, a simple yet fully customizable component made to achieve loading animation in a Skeleton-style. Works for iOS, Android and web. This repo is an upgrade from react-native-reanimated v1 to v3 inspired by https://github.com/alexZajac/react-native-skeleton-content.
 
-React native reanimated skeleton, a simple yet fully customizable component made to achieve loading animation in a Skeleton-style. Works in both iOS and Android.
-
-***THIS REPO IS AN UPGRADE FROM REANIMATED V1 to V3 inspired by https://github.com/alexZajac/react-native-skeleton-content***
-
-### Installation
-
-`npm install react-native-reanimated-skeleton`
+<div style="flex-direction: row">
+<a href="https://www.npmjs.com/package/react-native-reanimated-skeleton">
+  <img alt="weekly downloads from npm" src="https://img.shields.io/npm/dw/react-native-reanimated-skeleton"></a>
+  <img alt="react-native" src="https://img.shields.io/badge/React_Native-20232A?style=flat-square&logo=react&logoColor=61DAFB"></a>
+  <img alt="typescript" src="https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white"></a>
+  <img alt="javascript" src="https://img.shields.io/badge/JavaScript-323330?style=flat-square&logo=javascript&logoColor=F7DF1E"></a>
+  <img alt="javascript" src="https://img.shields.io/badge/storybook-FF4785?style=flat-square&logo=storybook&logoColor=white"></a>
+<a href="#badge">
+</div>
+<br>
+<img width="220px" src="https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/main.gif" />
+  
+### Installation  
+  `npm install react-native-reanimated-skeleton`
 
 ### Usage
+  1.  Import react-native-reanimated-skeleton:
+  
+  ```javascript
+  import Skeleton from 'react-native-reanimated-skeleton';
+  ```
 
-1.  Import react-native-reanimated-skeleton:
-
-```javascript
-import Skeleton from 'react-native-reanimated-skeleton';
-```
-
-2.  Once you create the Skeleton, you have two options:
-
-- **Child Layout** : The component will figure out the layout of its bones with the dimensions of its direct children.
-- **Custom Layout** : You provide a prop `layout` to the component specifying the size of the bones (see the [Examples](#examples) section below). Below is an example with a custom layout. A key prop for each child is optional but highly recommended.
-
-```jsx
-export default function Placeholder() {
-  return (
-    <Skeleton
-      containerStyle={{ flex: 1, width: 300 }}
-      isLoading={false}
-      layout={[
-        { key: 'someId', width: 220, height: 20, marginBottom: 6 },
-        { key: 'someOtherId', width: 180, height: 20, marginBottom: 6 }
-      ]}
-    >
-      <Text style={styles.normalText}>Your content</Text>
-      <Text style={styles.bigText}>Other content</Text>
-    </Skeleton>
-  );
-}
-```
-- **With children layout example**: More info can be found in the example folder
-
-```jsx
-<Skeleton
-  isLoading={true}
-  containerStyle={styles.container}
-  layout={[
-    {
-      width: 325,
-      height: 325,
-      borderRadius: 34,
-      marginBottom: 16,
-    },
-    {
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      children: [
-        {
-          width: 119,
-          height: 19,
-          borderRadius: 16,
-          marginBottom: 8,
-        },
-        {
-          width: 234,
-          height: 42,
-          borderRadius: 16,
-        },
-      ],
-    },
-  ]}
->
-  <>
+  2.  Once you create the Skeleton, you have two options:
+  
+  - **Child Layout** : The component will figure out the layout of its bones with the dimensions of its direct children.
+  
+  ```jsx
+  <Skeleton
+    isLoading={true}
+    containerStyle={styles.container}
+  >
     <Text style={styles.normalText}>Your content</Text>
     <Text style={styles.bigText}>Other content</Text>
-  </>
-</Skeleton>
-```
-
-3.  Then simply sync the prop `isLoading` to your state to show/hide the Skeleton when the assets/data are available to the user.
-
-```jsx
-export default function Placeholder () {
-  const [loading, setLoading] = useState(true);
-  return (
-    <Skeleton
-       containerStyle={{flex: 1, width: 300}}
-        isLoading={isLoading}>
-        {...otherProps}
-    />
-  )
-}
-```
+  </Skeleton>
+  ```
+  
+  - **Custom Layout** : You provide a prop `layout` to the component specifying the size of the bones (see the [Examples](#examples) section below). Below is an example with a custom layout. A key prop for each child is optional but highly recommended.
+  
+  ```jsx
+  export default function Placeholder() {
+    return (
+      <Skeleton
+        containerStyle={{ flex: 1, width: 300 }}
+        isLoading={false}
+        layout={[
+          { key: 'someId', width: 220, height: 20, marginBottom: 6 },
+          { key: 'someOtherId', width: 180, height: 20, marginBottom: 6 }
+        ]}
+      >
+        <Text style={styles.normalText}>Your content</Text>
+        <Text style={styles.bigText}>Other content</Text>
+      </Skeleton>
+    );
+  }
+  ```
+  
+  3.  Then simply sync the prop `isLoading` to your state to show/hide the Skeleton when the assets/data are available to the user.
+  
+  ```jsx
+  export default function Placeholder () {
+    const [loading, setLoading] = useState(true);
+    return (
+      <Skeleton
+         containerStyle={{flex: 1, width: 300}}
+          isLoading={isLoading}>
+          {...otherProps}
+      />
+    )
+  }
+  ```
 
 ### Props
 
@@ -109,77 +87,7 @@ export default function Placeholder () {
 | boneColor          | string           | "#E1E9EE"               | Color of the bones                                                                                                                |
 | highlightColor     | string           | "#F2F8FC"               | Color of the highlight of the bones                                                                                               |
 
-**Note**: The Easing type function is the one provided by [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated), so if you want to change the default you will have to install it as a dependency.
-
 ### Examples
 
-See the playground section to experiment :
-**1** - Changing the direction of the animation (animationDirection prop) :
+Please see the examples folder or storybook https://marcuzgabriel.github.io/react-native-reanimated-skeleton/?path=/docs/stories-skeleton--docs
 
-<p align="center">
-<img width="300px" src="https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/direction_change.gif" />
-</p>
-
-```javascript
-export default function Placeholder () {
-  return (
-    <Skeleton
-        containerStyle={{flex: 1, width: 300}}
-        animationDirection="horizontalLeft"
-        isLoading={true}>
-        ...
-    />
-  )
-}
-```
-
-**2** - Changing the colors and switching to "pulse" animation (boneColor, highlightColor and animationType prop) :
-
-<p align="center">
-<img width="300px" src="https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/color_change.gif" />
-</p>
-
-```jsx
-export default function Placeholder () {
-  return (
-    <Skeleton
-        containerStyle={{flex: 1, width: 300}}
-        boneColor="#121212"
-        highlightColor="#333333"
-        animationType="pulse"
-        isLoading={true}>
-        ...
-    />
-  )
-}
-```
-
-**3** - Customizing the layout of the bones (layout prop) :
-
-<p align="center">
-<img width="300px" src="https://raw.githubusercontent.com/alexZajac/react-native-skeleton-content/master/demos/layout_change.gif" />
-</p>
-
-```jsx
-export default function Placeholder () {
-  return (
-    <Skeleton
-        containerStyle={{flex: 1, width: 300}}
-        animationDirection="horizontalLeft"
-        layout={[
-        // long line
-        { width: 220, height: 20, marginBottom: 6 },
-        // short line
-        { width: 180, height: 20, marginBottom: 6 },
-        ...
-        ]}
-        isLoading={true}>
-        ...
-    />
-  )
-}
-```
-
-### Playground
-
-Don't hesitate to take contact if anything is unclear !
