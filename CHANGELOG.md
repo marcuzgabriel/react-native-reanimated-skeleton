@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.2.0...v1.2.1) (2023-09-09)
+
+
+### Bug Fixes
+
+* update readme.md for npm and github ([91e6d09](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/91e6d09e572402ce2d1f97cc3109fae216067d8b))
+
 # [1.2.0](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.1.0...v1.2.0) (2023-09-09)
 
 
