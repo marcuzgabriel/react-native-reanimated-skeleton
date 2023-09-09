@@ -15,32 +15,18 @@
     "esModuleInterop": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "lib"
+    "outDir": "./packages/npm/lib",
+    "rootDir": "./packages/npm/src",
+    "typeRoots": ["./node_modules/@types"],
   },
-  "references": [
-    {
-      "path": "./packages/app"
-    },
-    {
-      "path": "./packages/npm"
-    },
-    {
-      "path": "./packages/web"
-    }
-  ],
   "include": [
-    "packages/app/**/*.ts",
-    "packages/app/**/*.tsx",
     "packages/npm/**/*.ts",
     "packages/npm/**/*.tsx",
     "packages/npm/react-native-reanimated-skeleton.d.ts"
   ],
   "exclude": [
     "node_modules",
-    "packages/app/babel.config.js",
-    "packages/app/metro.config.js",
-    "packages/app/node_modules",
-    "packages/npm/node_modules",
-    "packages/web/node_modules",
+    "packages/app",
+    "packages/web"
   ]
 }

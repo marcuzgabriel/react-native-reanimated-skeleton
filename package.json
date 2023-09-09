@@ -15,10 +15,10 @@
     "type:check": "yarn tsc --noEmit",
     "type:generate:tsc": "yarn tsc",
     "type:generate:ios": "yarn type:generate:clean && yarn type:generate:create && yarn type:generate:tsc && yarn type:generate:delete:ios && yarn type:generate:copy:ios",
-    "type:generate:clean": "cross-env-shell rimraf lib",
-    "type:generate:create": "cross-env-shell mkdir lib",
-    "type:generate:delete:ios": "rm ./lib/ReactNativeReanimatedSkeleton.js",
-    "type:generate:copy:ios": "rsync -auv ./src/ReactNativeReanimatedSkeleton.ts ./lib/index.js"
+    "type:generate:clean": "cross-env-shell rimraf ./packages/npm/lib",
+    "type:generate:create": "cross-env-shell mkdir ./packages/npm/lib",
+    "type:generate:delete:ios": "rm ./packages/npm/lib/ReactNativeReanimatedSkeleton.js",
+    "type:generate:copy:ios": "rsync -auv ./packages/npm/src/ReactNativeReanimatedSkeleton.ts ./packages/npm/lib/index.js"
   },
   "devDependencies": {
     "@react-native/eslint-config": "^0.72.2",
