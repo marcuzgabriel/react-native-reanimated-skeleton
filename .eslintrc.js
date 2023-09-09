@@ -29,12 +29,7 @@ module.exports = {
     },
     'import/resolver': {
       typescript: {
-        project: [
-          path.resolve(__dirname, './tsconfig.json'),
-          path.resolve(__dirname, './packages/app/tsconfig.json'),
-          path.resolve(__dirname, './packages/npm/tsconfig.json'),
-          path.resolve(__dirname, './packages/web/tsconfig.json'),
-        ],
+        project: [path.resolve(__dirname, './tsconfig.json')],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
       },
       node: {

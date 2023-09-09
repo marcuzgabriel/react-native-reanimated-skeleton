@@ -3,10 +3,14 @@
 .sonar_lock
 .scannerwork
 .build-tools
+.DS_Store
+
 coverage
 install.log
 /screenshots
 /.build-tools/
+/packages/.DS_Store
+/packages/web/.DS_Store
 /packages/android/.gradle
 /packages/android/.idea
 /packages/android/.settings
