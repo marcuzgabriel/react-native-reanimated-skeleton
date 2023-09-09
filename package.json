@@ -2,10 +2,12 @@
   "homepage": "https://marcuzgabriel.github.io/react-native-reanimated-skeleton/",
   "name": "@rnrs/monorepo",
   "author": "Marcuz Gabriel Larsen <marcuzgabriel@gmail.com>",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "MIT",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "qa": "yarn format; yarn lint; yarn tsc",
     "format": "prettier --write --list-different '**/*.{json,ts,tsx}' --loglevel warn",

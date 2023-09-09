@@ -1,3 +1,13 @@
+# [1.2.0](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.1.0...v1.2.0) (2023-09-09)
+
+
+### Features
+
+* Monorepo for app complete ([cdbf612](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/cdbf612f33c5dfaeb59caa8f6d01a85e69cfd372))
+* Monorepo npm complete ([a4b3f31](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/a4b3f31f5ebdbb54d9dd25a9081c48a578c97f3f))
+* npm mono repo complete ([2e77f42](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/2e77f427d674aa7017735753edb0135c79b8f47e))
+* Storybook ([e83ef07](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/e83ef079056be0ba698043fe5b1657e3c60d44c3))
+
 # [1.1.0](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.0.2...v1.1.0) (2023-09-08)
 
 
