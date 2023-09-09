@@ -7,19 +7,19 @@ coverage
 install.log
 /screenshots
 /.build-tools/
-/android/.gradle
-/android/.idea
-/android/.settings
-/android/app/build/*/**
-/android/app/.cxx/**
-/android/*/**.jks
+/packages/android/.gradle
+/packages/android/.idea
+/packages/android/.settings
+/packages/android/app/build/*/**
+/packages/android/app/.cxx/**
+/packages/android/*/**.jks
 
 # OSX
 changes.txt
 
 # Xcode
-ios/build/
-ios/artifacts/
+packages/ios/build/
+packages/ios/artifacts/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -38,12 +38,12 @@ DerivedData
 *.xcuserstate
 
 # Android/IntelliJ
-android/.gradle
-android/.idea
-android/.settings
-android/app/.cxx/**
-android/app/release/app-release.aab
-android/app/build/
+packages/android/.gradle
+packages/android/.idea
+packages/android/.settings
+packages/android/app/.cxx/**
+packages/android/app/release/app-release.aab
+packages/android/app/build/
 .idea
 .gradle
 local.properties
@@ -52,6 +52,9 @@ local.properties
 
 # node.js
 node_modules/
+packages/app/node_modules
+packages/web/node_modules
+packages/npm/node_modules
 npm-debug.log
 yarn-error.log
 package-lock.json
@@ -79,4 +82,4 @@ test-report.xml
 
 # TypeScript
 dist
-/lib
+packages/npm/lib
