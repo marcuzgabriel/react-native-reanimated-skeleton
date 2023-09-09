@@ -17,16 +17,12 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./packages/npm/lib",
     "rootDir": "./packages/npm/src",
-    "typeRoots": ["./node_modules/@types"],
+    "typeRoots": ["./node_modules/@types"]
   },
   "include": [
     "packages/npm/**/*.ts",
     "packages/npm/**/*.tsx",
     "packages/npm/react-native-reanimated-skeleton.d.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "packages/app",
-    "packages/web"
-  ]
+  "exclude": ["node_modules", "packages/app", "packages/web"]
 }
