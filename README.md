@@ -73,10 +73,8 @@ export default function Placeholder() {
     },
   ]}
 >
-  <>
-    <Text style={styles.normalText}>Your content</Text>
-    <Text style={styles.bigText}>Other content</Text>
-  </>
+  <Text style={styles.normalText}>Your content</Text>
+  <Text style={styles.bigText}>Other content</Text>
 </Skeleton>
 ```
 
