@@ -11,6 +11,7 @@
     "format": "prettier --write --list-different '**/*.{json,ts,tsx}' --loglevel warn",
     "lint": "eslint . --fix --ext .ts,.tsx --no-cache",
     "start": "yarn workspace @rnrs/app start",
+    "storybook": "yarn workspace @rnrs/web storybook",
     "type:check": "yarn tsc --noEmit",
     "type:generate:tsc": "yarn tsc",
     "type:generate:ios": "yarn type:generate:clean && yarn type:generate:create && yarn type:generate:tsc && yarn type:generate:delete:ios && yarn type:generate:copy:ios",
