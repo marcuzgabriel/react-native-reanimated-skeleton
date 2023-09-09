@@ -1,0 +1,29 @@
+{
+  "name": "react-native-reanimated-skeleton",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-linear-gradient": "*",
+    "react-native-reanimated": "*"
+  },
+  "react-native": "src/ReactNativeReanimatedSkeleton.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "react-native-reanimated-skeleton.d.ts",
+  "files": [
+    "src/",
+    "lib/",
+    "react-native-reanimated-skeleton.d.ts",
+    "README.md",
+    "!__snapshots__",
+    "!*.test.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/marcuzgabriel/react-native-reanimated-skeleton/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcuzgabriel/react-native-reanimated-skeleton.git"
+  }
+}

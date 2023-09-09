@@ -1,0 +1,90 @@
+{
+  "name": "@rnrs/app",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "qa": "yarn format; yarn lint; yarn tsc",
+    "format": "prettier --write --list-different '**/*.{json,ts,tsx}' --loglevel warn",
+    "lint": "eslint . --fix --ext .ts,.tsx --no-cache",
+    "align-deps": "yarn rnx-align-deps",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "type:check": "yarn tsc --noEmit",
+    "type:generate:tsc": "yarn tsc",
+    "type:generate:ios": "yarn type:generate:clean && yarn type:generate:create && yarn type:generate:tsc && yarn type:generate:delete:ios && yarn type:generate:copy:ios",
+    "type:generate:clean": "cross-env-shell rimraf lib",
+    "type:generate:create": "cross-env-shell mkdir lib",
+    "type:generate:delete:ios": "rm ./lib/ReactNativeReanimatedSkeleton.js",
+    "type:generate:copy:ios": "rsync -auv ./src/ReactNativeReanimatedSkeleton.ts ./lib/index.js"
+  },
+  "types": "../npm/react-native-reanimated-skeleton.d.ts",
+  "dependencies": {
+    "react": "^18.0.2",
+    "react-native": "^0.72.4",
+    "react-native-linear-gradient": "^2.8.3",
+    "react-native-reanimated": "^3.4.2"
+  },
+  "devDependencies": {
+    "@rnx-kit/metro-config": "^1.3.9",
+    "@babel/core": "^7.22.15",
+    "@babel/eslint-parser": "^7.22.15",
+    "@babel/plugin-proposal-decorators": "^7.22.15",
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
+    "@babel/plugin-proposal-private-methods": "^7.18.6",
+    "@babel/plugin-transform-arrow-functions": "^7.22.5",
+    "@babel/plugin-transform-private-methods": "^7.22.5",
+    "@babel/plugin-transform-runtime": "^7.22.15",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.22.15",
+    "@babel/runtime": "^7.22.15",
+    "@react-native/eslint-config": "^0.72.2",
+    "@react-native/metro-config": "^0.72.11",
+    "@rnx-kit/align-deps": "^2.2.4",
+    "@testing-library/jest-native": "^5.4.3",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/react-native": "^12.3.0",
+    "babel-jest": "^29.6.4",
+    "babel-loader": "9.1.3",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.4",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "metro-config": "^0.79.0",
+    "metro-react-native-babel-preset": "0.77.0",
+    "react-test-renderer": "18.2.0"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "rnx-kit": {
+    "kitType": "app",
+    "alignDeps": {
+      "requirements": [
+        "react-native@0.72"
+      ],
+      "capabilities": [
+        "animation",
+        "babel-preset-react-native",
+        "clipboard",
+        "core",
+        "core-android",
+        "core-ios",
+        "gestures",
+        "jest",
+        "masked-view",
+        "metro-config",
+        "navigation/native",
+        "navigation/stack",
+        "react",
+        "react-test-renderer",
+        "safe-area",
+        "screens",
+        "storage",
+        "svg"
+      ]
+    }
+  }
+}

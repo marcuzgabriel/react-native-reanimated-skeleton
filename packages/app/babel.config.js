@@ -1,5 +1,5 @@
 module.exports = {
-  presets: ['module:@babel/preset-typescript', 'module:metro-react-native-babel-preset'],
+  presets: ['@rnx-kit/babel-preset-metro-react-native'],
   plugins: [
     '@babel/plugin-transform-flow-strip-types',
     '@babel/plugin-proposal-class-properties',
