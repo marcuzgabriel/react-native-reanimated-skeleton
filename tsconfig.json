@@ -15,17 +15,18 @@
     "esModuleInterop": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "lib"
+    "outDir": "./packages/npm/lib",
+    "rootDir": "./packages/npm/src",
+    "typeRoots": ["./node_modules/@types"],
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "react-native-reanimated-skeleton.d.ts"
+    "packages/npm/**/*.ts",
+    "packages/npm/**/*.tsx",
+    "packages/npm/react-native-reanimated-skeleton.d.ts"
   ],
   "exclude": [
     "node_modules",
-    "babel.config.js",
-    "metro.config.js",
-    "jest.config.js"
+    "packages/app",
+    "packages/web"
   ]
 }
