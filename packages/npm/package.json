@@ -1,4 +1,7 @@
 {
+  "homepage": "https://marcuzgabriel.github.io/react-native-reanimated-skeleton/",
+  "author": "Marcuz Gabriel Larsen <marcuzgabriel@gmail.com>",
+  "license": "MIT",
   "name": "react-native-reanimated-skeleton",
   "version": "1.2.1",
   "peerDependencies": {
