@@ -70,14 +70,14 @@ export const SkeletonHorizontalRight: StoryObj<ISkeletonProps> = {
   },
 };
 
-export const SkeletonVerticalTop: StoryObj<ISkeletonContentProps> = {
+export const SkeletonVerticalTop: StoryObj<ISkeletonProps> = {
   args: {
     animationDirection: 'verticalTop',
     ...DEFAULT_ARGS,
   },
 };
 
-export const SkeletonVerticalDown: StoryObj<ISkeletonContentProps> = {
+export const SkeletonVerticalDown: StoryObj<ISkeletonProps> = {
   args: {
     animationDirection: 'verticalDown',
     ...DEFAULT_ARGS,

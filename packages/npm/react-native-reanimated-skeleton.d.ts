@@ -53,7 +53,7 @@ declare module 'react-native-reanimated-skeleton' {
     y: number;
   }
 
-  export function Skeleton<P extends ISkeletonProps>(
-    props: P,
-  ): React.ReactElement<P>;
+  function Skeleton<P extends ISkeletonProps>(props: P): React.ReactElement<P>;
+
+  export default Skeleton;
 }
