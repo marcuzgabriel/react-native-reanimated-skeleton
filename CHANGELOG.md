@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.2.1...v1.2.2) (2023-09-18)
+
+
+### Bug Fixes
+
+* export default type bug ([9e7c91f](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/9e7c91f44c6d43545c9df4c9db29eade29549e0a))
+
 ## [1.2.1](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.2.0...v1.2.1) (2023-09-09)
 
 
