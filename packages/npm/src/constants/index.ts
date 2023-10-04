@@ -26,6 +26,7 @@ export interface ISkeletonProps {
   animationType?: _animationType;
   animationDirection?: _animationDirection;
   boneColor?: string | undefined;
+  hasFadeIn?: boolean;
   highlightColor?: string | undefined;
   easing?: { factory: () => EasingFn };
   children?: React.ReactNode;

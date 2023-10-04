@@ -1,14 +1,18 @@
 import React, { memo, useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
-import {
+import Animated, {
   useSharedValue,
   withRepeat,
   withTiming,
   useAnimatedReaction,
+  useDerivedValue,
+  useAnimatedStyle,
 } from 'react-native-reanimated';
 import { DEFAULT_CONFIG } from './constants';
 import { useLayout, useGetBones } from './hooks';
 import type { ISkeletonProps } from './constants';
+
+const FADE_IN_DURATION = 250;
 
 /* NOTE: Exporting props so it can be reused */
 export { ISkeletonProps };
@@ -23,6 +27,7 @@ export { ISkeletonProps };
  * @animationDirection is the direction of the animation.
  * @isLoading is the state of the animation visibility.
  * @boneColor is the color of the bone.
+ * @hasFadeIn is the state of the fade in animation.
  * @highlightColor is the color of the highlight.
  * @children is the children of the component / the content that should be visible after loading.
  */
@@ -36,10 +41,11 @@ const Skeleton: React.FC<ISkeletonProps> = ({
   isLoading = DEFAULT_CONFIG.LOADING,
   boneColor = DEFAULT_CONFIG.BONE_COLOR,
   highlightColor = DEFAULT_CONFIG.HIGHLIGHT_COLOR,
+  hasFadeIn,
   children,
 }) => {
   const animationValue = useSharedValue(0);
-  const loadingValue = useSharedValue(isLoading ? 1 : 0);
+  const loadingValue = useSharedValue(0);
   const shiverValue = useSharedValue(animationType === 'shiver' ? 1 : 0);
   const [componentSize, onLayout] = useLayout();
   const generalStyles = useMemo(
@@ -62,9 +68,9 @@ const Skeleton: React.FC<ISkeletonProps> = ({
   const getBones = useGetBones(componentSize);
 
   useAnimatedReaction(
-    () => ({ loadingValue }),
+    () => ({ isLoading, loadingValue }),
     () => {
-      if (loadingValue.value === 1) {
+      if (isLoading && loadingValue.value !== 1) {
         animationValue.value =
           shiverValue.value === 1
             ? withRepeat(withTiming(1, { duration, easing }), -1, false)
@@ -75,18 +81,34 @@ const Skeleton: React.FC<ISkeletonProps> = ({
               );
       }
     },
-    [loadingValue, shiverValue],
+    [isLoading, shiverValue],
   );
+
+  const opacity = useDerivedValue(() => {
+    if (!isLoading) {
+      return withTiming(1, { duration: FADE_IN_DURATION });
+    }
+
+    return 0;
+  });
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    opacity: opacity.value,
+  }));
 
   return (
     <View style={containerStyle} onLayout={onLayout}>
-      {isLoading
-        ? getBones({
-            bonesLayout: layout,
-            children,
-            generalStyles,
-          })
-        : children}
+      {isLoading ? (
+        getBones({
+          bonesLayout: layout,
+          children,
+          generalStyles,
+        })
+      ) : (
+        <Animated.View style={hasFadeIn ? animatedStyle : {}}>
+          {children}
+        </Animated.View>
+      )}
     </View>
   );
 };
