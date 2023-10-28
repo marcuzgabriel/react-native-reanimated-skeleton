@@ -71,6 +71,9 @@ const Skeleton: React.FC<ISkeletonProps> = ({
     () => ({ isLoading, loadingValue }),
     () => {
       if (isLoading && loadingValue.value !== 1) {
+        /* NOTE: Reset behaviour to ensure animation always starts from the beginning */
+        animationValue.value = 0;
+
         animationValue.value =
           shiverValue.value === 1
             ? withRepeat(withTiming(1, { duration, easing }), -1, false)
