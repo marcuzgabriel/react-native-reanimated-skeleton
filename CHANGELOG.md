@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.3.0...v1.4.0) (2023-10-28)
+
+
+### Features
+
+* Reset behaviour of animations to ensure consistency ([02b1902](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/02b1902ef869062042cd1c902a4a404cde98d9f0))
+
 # [1.3.0](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.2.2...v1.3.0) (2023-10-04)
 
 
