@@ -30,10 +30,31 @@ const DEFAULT_ARGS: ISkeletonProps = {
       alignItems: 'center',
       children: [
         {
-          width: 119,
+          width: '100%',
           height: 19,
           borderRadius: 16,
           marginBottom: 8,
+          flexDirection: 'column',
+          children: [
+            {
+              width: '100%',
+              height: '100%',
+              flexDirection: 'row',
+              children: [
+                {
+                  width: 119,
+                  height: '100%',
+                  borderRadius: 16,
+                },
+                {
+                  width: 119,
+                  marginLeft: 6,
+                  height: '100%',
+                  borderRadius: 16,
+                },
+              ],
+            },
+          ],
         },
         {
           width: 234,
