@@ -23,40 +23,40 @@ interface UseGetBonesProps {
 export const useGetBones = (componentSize: IComponentSize) => {
   const renderBone = useRenderBone(componentSize);
 
+  const renderNestedBones = useCallback(
+    (
+      bones: ICustomViewStyle[],
+      prefix: string | number | undefined,
+      generalStyles: IGeneralStyles,
+    ) => {
+      return bones.map((bone, index) => {
+        const keyIndex = prefix ? `${prefix}_${index}` : index;
+
+        const { children: childBones, ...layoutStyle } = bone;
+
+        if (childBones?.length) {
+          return (
+            <View key={keyIndex} style={layoutStyle}>
+              {renderNestedBones(childBones, keyIndex, generalStyles)}
+            </View>
+          );
+        }
+
+        return renderBone({
+          generalStyles,
+          bonesLayout: bones,
+          index,
+          keyIndex,
+        });
+      });
+    },
+    [renderBone],
+  );
+
   return useCallback(
     ({ bonesLayout, children, prefix, generalStyles }: UseGetBonesProps) => {
       if (bonesLayout && bonesLayout.length > 0) {
-        const iterator: number[] = new Array(bonesLayout.length).fill(0);
-
-        return iterator.map((_, i) => {
-          /* NOTE: Has nested layout with children */
-          if (bonesLayout[i]?.children?.length) {
-            const containerPrefix =
-              bonesLayout[i]?.key || `bone_container_${i}`;
-            const { children: childBones, ...layoutStyle } =
-              bonesLayout[i] ?? {};
-
-            return (
-              <View key={containerPrefix} style={layoutStyle}>
-                {childBones?.map((__, childIndex) =>
-                  renderBone({
-                    generalStyles,
-                    bonesLayout: childBones,
-                    index: childIndex,
-                    keyIndex: prefix ? `${prefix}_${childIndex}` : childIndex,
-                  }),
-                )}
-              </View>
-            );
-          }
-
-          return renderBone({
-            generalStyles,
-            bonesLayout,
-            index: i,
-            keyIndex: prefix ? `${prefix}_${i}` : i,
-          });
-        });
+        return renderNestedBones(bonesLayout, prefix, generalStyles);
       }
 
       return Children.map(children as JSX.Element[], (child, i) => {
@@ -87,6 +87,6 @@ export const useGetBones = (componentSize: IComponentSize) => {
         );
       });
     },
-    [componentSize, renderBone],
+    [componentSize, renderNestedBones],
   );
 };
