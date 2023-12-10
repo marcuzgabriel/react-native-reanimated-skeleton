@@ -3,7 +3,7 @@
   "author": "Marcuz Gabriel Larsen <marcuzgabriel@gmail.com>",
   "license": "MIT",
   "name": "react-native-reanimated-skeleton",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
