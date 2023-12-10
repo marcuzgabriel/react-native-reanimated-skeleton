@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.4.0...v1.5.0) (2023-12-10)
+
+
+### Bug Fixes
+
+* Adapt story to multiple neested bones, useCallback and correct dependencies ([43e1912](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/43e1912dae4a9de1701d2217c8cf5f11503068d2))
+
+
+### Features
+
+* Add support for multi-level nesting in bones layout ([c289f36](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/c289f3661d97a2d2baeba60f98282ca6befc1650))
+
 # [1.4.0](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.3.0...v1.4.0) (2023-10-28)
 
 
