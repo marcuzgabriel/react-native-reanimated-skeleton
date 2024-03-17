@@ -99,7 +99,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 1. Ensure you have this script
    https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/expo/scripts
-2. Make sure it is added to the package.json within scripts `postinstall`. Please see example: https://github.com/marcuzgabriel/react-native-reanimated-skeleton/tree/main/packages/expo
+2. Make sure postinstall is added to the package.json. Please see example: https://github.com/marcuzgabriel/react-native-reanimated-skeleton/blob/main/packages/expo/package.json
+3. npm install and rerun the app
 
 ### Examples
 
