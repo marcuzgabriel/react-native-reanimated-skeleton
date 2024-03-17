@@ -5,9 +5,14 @@
   "version": "1.5.0",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/expo/**"
+    ]
+  },
   "scripts": {
     "qa": "yarn format; yarn lint; yarn tsc",
     "format": "prettier --write --list-different '**/*.{json,ts,tsx}' --loglevel warn",
