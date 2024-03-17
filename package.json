@@ -2,7 +2,7 @@
   "homepage": "https://marcuzgabriel.github.io/react-native-reanimated-skeleton/",
   "name": "@rnrs/monorepo",
   "author": "Marcuz Gabriel Larsen <marcuzgabriel@gmail.com>",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "license": "MIT",
   "private": true,
   "workspaces": [

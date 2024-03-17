@@ -1,3 +1,13 @@
+## [1.5.1](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.5.0...v1.5.1) (2024-03-17)
+
+
+### Bug Fixes
+
+* Expo folder, readme.md and postinstall script ([5b371cb](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/5b371cbeebd291039d05bdd368212012e00ca367))
+* Fixing QA ([f34bbff](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/f34bbff169d9e2e3e3d096148a560b575a3422fc))
+* Minor findings ([a437134](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/a4371341d6144693a22d1d54668cb4137d52413d))
+* Update monorepo to include expo ([ab69bac](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/ab69bacb6c5ae3e44547c8e796bd15874d4b12b5))
+
 # [1.5.0](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.4.0...v1.5.0) (2023-12-10)
 
 
