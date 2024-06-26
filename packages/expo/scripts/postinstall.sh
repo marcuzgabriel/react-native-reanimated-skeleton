@@ -3,7 +3,7 @@ echo "Running postinstall script for react-native-reanimated-skeleton to support
 
 # Replace react-native-linear-gradient with expo-linear-gradient and LinearGradient import to { LinearGradient } with the
 # react-native-reanimated-skeleton node_module package
-if [[ "$(uname)" == "Darwin" ]]; then
+if [ "$(uname)" = "Darwin" ]; then
     echo "Using Mac -i '' seperator for sed -i"
     SP=" " # Needed for portability with sed
 else
