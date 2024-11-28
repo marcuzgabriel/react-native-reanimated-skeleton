@@ -54,7 +54,7 @@ export const DEFAULT_CONFIG = {
   BORDER_RADIUS: 4,
   DURATION: 1200,
   ANIMATION_TYPE: 'shiver' as _animationType,
-  ANIMATION_DIRECTION: 'horizontalLeft' as _animationDirection,
+  ANIMATION_DIRECTION: 'horizontalRight' as _animationDirection,
   BONE_COLOR: '#E1E9EE',
   HIGHLIGHT_COLOR: '#F2F8FC',
   EASING: Easing.bezier(0.5, 0, 0.25, 1),
