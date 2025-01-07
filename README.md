@@ -81,7 +81,7 @@ export default function Placeholder () {
 | containerStyle     | object           | flex: 1                 | The style applied to the View containing the bones                                                                                |
 | easing             | Easing           | bezier(0.5, 0, 0.25, 1) | Easing of the bones animation                                                                                                     |
 | animationType      | string           | "shiver"                | The animation to be used for animating the bones (see demos below)                                                                |
-| animationDirection | string           | "horizontalRight"       | Used only for shiver animation, describes the direction and end-point (ex: horizontalRight goes on the x-axis from left to right) |
+| animationDirection | string           | "horizontalLeft"        | Used only for shiver animation, describes the direction and end-point (ex: horizontalLeft goes on the x-axis from right to left)  |
 | boneColor          | string           | "#E1E9EE"               | Color of the bones                                                                                                                |
 | highlightColor     | string           | "#F2F8FC"               | Color of the highlight of the bones                                                                                               |
 
