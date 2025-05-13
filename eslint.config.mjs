@@ -110,7 +110,7 @@ export default tseslint.config(
       "dot-notation": ["error", { "allowKeywords": false }], // aligns eslint with ts with dot notations
       'no-console': 2, // use createLogger instead
       'dot-notation': 0, // is conflicting with prettier
-      'import/no-cycle': ['error', { maxDepth: 5, ignoreExternal: true }],
+      'import/no-cycle': ['error', { maxDepth: 1, ignoreExternal: true }],
 
       /* TODO: Discuss with the team whether we are using TypeScript effectively.
       Which errors should we enable? Currently, we have quite a few patterns

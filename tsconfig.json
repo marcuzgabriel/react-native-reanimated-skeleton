@@ -21,8 +21,7 @@
   },
   "include": [
     "packages/npm/**/*.ts",
-    "packages/npm/**/*.tsx",
-    "packages/npm/index.d.ts"
+    "packages/npm/**/*.tsx"
   ],
   "exclude": ["node_modules", "packages/app", "packages/web"]
 }

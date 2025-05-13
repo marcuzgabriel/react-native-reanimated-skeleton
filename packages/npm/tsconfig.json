@@ -1,5 +1,4 @@
 {
-    
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./lib",
@@ -33,5 +32,5 @@
     "strict": true,
     "preserveConstEnums": true,
   },
-  "include": ["src/**/*", "index.d.ts"]
+  "include": ["src/**/*"]
 }
