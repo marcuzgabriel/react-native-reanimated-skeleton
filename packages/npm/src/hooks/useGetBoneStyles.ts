@@ -1,15 +1,15 @@
-import { useCallback } from 'react';
-import { useGetBoneDimensions } from '../worklets';
+import { useCallback } from "react";
+import { useGetBoneDimensions } from "../worklets";
 import {
   ICustomViewStyle,
   ISkeletonProps,
   IComponentSize,
   DEFAULT_CONFIG,
-} from '../constants';
+} from "../constants";
 
 type UseGetBoneStylesProps = Pick<
   ISkeletonProps,
-  'animationType' | 'animationDirection' | 'boneColor'
+  "animationType" | "animationDirection" | "boneColor"
 > & {
   boneLayout: ICustomViewStyle;
 };
@@ -34,19 +34,19 @@ export const useGetBoneStyles = (componentSize: IComponentSize) => {
         ...boneLayout,
       };
 
-      if (animationType !== 'pulse') {
-        boneStyle.overflow = 'hidden';
+      if (animationType !== "pulse") {
+        boneStyle.overflow = "hidden";
         boneStyle.backgroundColor = backgroundColor || boneColor;
       }
 
       if (
-        animationDirection === 'diagonalDownRight' ||
-        animationDirection === 'diagonalDownLeft' ||
-        animationDirection === 'diagonalTopRight' ||
-        animationDirection === 'diagonalTopLeft'
+        animationDirection === "diagonalDownRight" ||
+        animationDirection === "diagonalDownLeft" ||
+        animationDirection === "diagonalTopRight" ||
+        animationDirection === "diagonalTopLeft"
       ) {
-        boneStyle.justifyContent = 'center';
-        boneStyle.alignItems = 'center';
+        boneStyle.justifyContent = "center";
+        boneStyle.alignItems = "center";
       }
 
       return boneStyle;

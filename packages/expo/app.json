@@ -1,5 +1,10 @@
 {
   "expo": {
+    "sdkVersion": "53.0.0",
+    "jsEngine": "hermes",
+    "experiments": {
+      "reactCompiler": true
+    },
     "name": "my-app",
     "slug": "my-app",
     "version": "1.0.0",
@@ -15,13 +20,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "reactNativeNewArchitecture": true,
+      "bundleIdentifier": "com.marcuzgabriel.my-app"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "reactNativeNewArchitecture": true
     },
     "web": {
       "favicon": "./assets/favicon.png"

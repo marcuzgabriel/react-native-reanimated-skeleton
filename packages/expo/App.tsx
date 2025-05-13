@@ -1,6 +1,6 @@
+import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { LinearGradient } from "react-native-linear-gradient";
 import SkeletonExample from "react-native-reanimated-skeleton/src/example";
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
   },

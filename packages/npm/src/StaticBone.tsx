@@ -1,19 +1,19 @@
-import React, { memo } from 'react';
+import React, { memo } from "react";
 import Animated, {
   SharedValue,
   useAnimatedStyle,
   interpolateColor,
-} from 'react-native-reanimated';
-import { useGetBoneStyles } from './hooks';
+} from "react-native-reanimated";
+import { useGetBoneStyles } from "./hooks/useGetBoneStyles";
 import type {
   ICustomViewStyle,
   ISkeletonProps,
   IComponentSize,
-} from './constants';
+} from "./constants";
 
 type StaticBoneProps = Pick<
   ISkeletonProps,
-  'boneColor' | 'highlightColor' | 'animationType' | 'animationDirection'
+  "boneColor" | "highlightColor" | "animationType" | "animationDirection"
 > & {
   componentSize: IComponentSize;
   boneLayout: ICustomViewStyle;
@@ -62,7 +62,7 @@ const StaticBone: React.FC<StaticBoneProps> = ({
   return (
     <Animated.View
       key={index}
-      style={[boneStyle, animationType === 'none' ? {} : animatedStyle]}
+      style={[boneStyle, animationType === "none" ? {} : animatedStyle]}
     />
   );
 };

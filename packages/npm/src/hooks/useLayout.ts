@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react';
-import { LayoutChangeEvent } from 'react-native';
+import { useState, useCallback } from "react";
+import { LayoutChangeEvent } from "react-native";
 
 type Size = {
   width: number;

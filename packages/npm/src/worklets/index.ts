@@ -1,3 +1,3 @@
-export { useGetGradientTransform } from './useGetGradientTransform';
-export { useGetPositionRange } from './useGetPositionRange';
-export { useGetBoneDimensions } from './useGetBoneDimensions';
+export { useGetGradientTransform } from "./useGetGradientTransform";
+export { useGetPositionRange } from "./useGetPositionRange";
+export { useGetBoneDimensions } from "./useGetBoneDimensions";

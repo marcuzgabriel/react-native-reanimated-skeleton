@@ -1,12 +1,12 @@
-import { useCallback } from 'react';
-import { useGetBoneDimensions } from '../worklets';
+import { useCallback } from "react";
+import { useGetBoneDimensions } from "../worklets";
 import type {
   ICustomViewStyle,
   ISkeletonProps,
   IComponentSize,
-} from '../constants';
+} from "../constants";
 
-type UseGetGradientSizeProps = Pick<ISkeletonProps, 'animationDirection'> & {
+type UseGetGradientSizeProps = Pick<ISkeletonProps, "animationDirection"> & {
   boneLayout: ICustomViewStyle;
 };
 
@@ -19,10 +19,10 @@ export const useGetGradientSize = (componentSize: IComponentSize) => {
       const gradientStyle: ICustomViewStyle = {};
 
       if (
-        animationDirection === 'diagonalDownRight' ||
-        animationDirection === 'diagonalDownLeft' ||
-        animationDirection === 'diagonalTopRight' ||
-        animationDirection === 'diagonalTopLeft'
+        animationDirection === "diagonalDownRight" ||
+        animationDirection === "diagonalDownLeft" ||
+        animationDirection === "diagonalTopRight" ||
+        animationDirection === "diagonalTopLeft"
       ) {
         gradientStyle.width = width as number;
         gradientStyle.height = height as number;
