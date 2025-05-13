@@ -1,5 +1,5 @@
-import React, { memo, useMemo } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { memo, useMemo } from "react";
+import { StyleSheet, View } from "react-native";
 import Animated, {
   useSharedValue,
   withRepeat,
@@ -7,10 +7,10 @@ import Animated, {
   useAnimatedReaction,
   useDerivedValue,
   useAnimatedStyle,
-} from 'react-native-reanimated';
-import { DEFAULT_CONFIG } from './constants';
-import { useLayout, useGetBones } from './hooks';
-import type { ISkeletonProps } from './constants';
+} from "react-native-reanimated";
+import { DEFAULT_CONFIG } from "./constants";
+import { useLayout, useGetBones } from "./hooks";
+import type { ISkeletonProps } from "./constants";
 
 const FADE_IN_DURATION = 250;
 
@@ -46,7 +46,7 @@ const Skeleton: React.FC<ISkeletonProps> = ({
 }) => {
   const animationValue = useSharedValue(0);
   const loadingValue = useSharedValue(0);
-  const shiverValue = useSharedValue(animationType === 'shiver' ? 1 : 0);
+  const shiverValue = useSharedValue(animationType === "shiver" ? 1 : 0);
   const [componentSize, onLayout] = useLayout();
   const generalStyles = useMemo(
     () => ({
@@ -120,8 +120,8 @@ export default memo(Skeleton);
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
+    alignItems: "center",
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
 });

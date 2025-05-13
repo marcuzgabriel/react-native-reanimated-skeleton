@@ -1,25 +1,23 @@
-import React, { memo } from 'react';
-import { View, StyleSheet } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import React, { memo } from "react";
+import { View, StyleSheet } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
 import Animated, {
   SharedValue,
   useAnimatedStyle,
-} from 'react-native-reanimated';
-import { useGetGradientTransform } from './worklets';
-import {
-  useGetBoneStyles,
-  useGetGradientSize,
-  useGetGradientEndDirection,
-} from './hooks';
+} from "react-native-reanimated";
+import { useGetGradientTransform } from "./worklets";
+import { useGetBoneStyles } from "./hooks/useGetBoneStyles";
+import { useGetGradientSize } from "./hooks/useGetGradientSize";
+import { useGetGradientEndDirection } from "./hooks/useGetGradientEndDirection";
 import type {
   ISkeletonProps,
   ICustomViewStyle,
   IComponentSize,
-} from './constants';
+} from "./constants";
 
 type ShiverBoneProps = Pick<
   ISkeletonProps,
-  'boneColor' | 'highlightColor' | 'animationType' | 'animationDirection'
+  "boneColor" | "highlightColor" | "animationType" | "animationDirection"
 > & {
   componentSize: IComponentSize;
   boneLayout: ICustomViewStyle;
@@ -71,7 +69,7 @@ const ShiverBone: React.FC<ShiverBoneProps> = ({
         translateY: transform.value.translateY ?? 0,
       },
       {
-        rotate: transform.value.rotate ?? '0deg',
+        rotate: transform.value.rotate ?? "0deg",
       },
     ],
   }));
@@ -110,9 +108,9 @@ export default memo(ShiverBone);
 
 const styles = StyleSheet.create({
   absoluteGradient: {
-    height: '100%',
-    position: 'absolute',
-    width: '100%',
+    height: "100%",
+    position: "absolute",
+    width: "100%",
   },
   gradientChild: {
     flex: 1,

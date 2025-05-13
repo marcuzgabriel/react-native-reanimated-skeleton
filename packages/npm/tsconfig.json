@@ -1,0 +1,37 @@
+{
+    
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "declaration": false,
+    "removeComments": true,
+    "preserveSymlinks": true,
+    "isolatedModules": true, // Changed to true to help with separate file compilation
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react-native",
+    "lib": ["esnext"],
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowJs": false,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "checkJs": false,
+    "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "preserveConstEnums": true,
+  },
+  "include": ["src/**/*", "index.d.ts"]
+}

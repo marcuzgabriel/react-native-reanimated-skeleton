@@ -1,13 +1,13 @@
-import React, { Children, useCallback } from 'react';
-import { View } from 'react-native';
-import { useRenderBone } from '../hooks';
-import StaticBone from '../StaticBone';
-import ShiverBone from '../ShiverBone';
+import React, { Children, useCallback } from "react";
+import { View } from "react-native";
+import { useRenderBone } from "../hooks/useRenderBone";
+import StaticBone from "../StaticBone";
+import ShiverBone from "../ShiverBone";
 import type {
   ICustomViewStyle,
   IGeneralStyles,
   IComponentSize,
-} from '../constants';
+} from "../constants";
 
 interface UseGetBonesProps {
   bonesLayout: ICustomViewStyle[];
@@ -63,8 +63,8 @@ export const useGetBones = (componentSize: IComponentSize) => {
         const styling = child.props.style || {};
 
         if (
-          generalStyles.animationType === 'pulse' ||
-          generalStyles.animationType === 'none'
+          generalStyles.animationType === "pulse" ||
+          generalStyles.animationType === "none"
         ) {
           return (
             <StaticBone

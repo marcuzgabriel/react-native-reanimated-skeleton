@@ -22,7 +22,7 @@
   "include": [
     "packages/npm/**/*.ts",
     "packages/npm/**/*.tsx",
-    "packages/npm/react-native-reanimated-skeleton.d.ts"
+    "packages/npm/index.d.ts"
   ],
   "exclude": ["node_modules", "packages/app", "packages/web"]
 }

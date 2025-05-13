@@ -2,17 +2,18 @@ import {
   SharedValue,
   interpolate,
   useDerivedValue,
-} from 'react-native-reanimated';
-import { useGetPositionRange, useGetBoneDimensions } from '../worklets';
+} from "react-native-reanimated";
+import { useGetBoneDimensions } from "../worklets/useGetBoneDimensions";
+import { useGetPositionRange } from "../worklets/useGetPositionRange";
 import type {
   ICustomViewStyle,
   IComponentSize,
   ISkeletonProps,
-} from '../constants';
+} from "../constants";
 
 type UseGetGradientTransformProps = Pick<
   ISkeletonProps,
-  'animationDirection'
+  "animationDirection"
 > & {
   componentSize: IComponentSize;
   boneLayout: ICustomViewStyle;
@@ -44,10 +45,10 @@ export const useGetGradientTransform = ({
     const { width, height } = getBoneDimensions(boneLayout);
 
     if (
-      animationDirection === 'verticalTop' ||
-      animationDirection === 'verticalDown' ||
-      animationDirection === 'horizontalLeft' ||
-      animationDirection === 'horizontalRight'
+      animationDirection === "verticalTop" ||
+      animationDirection === "verticalDown" ||
+      animationDirection === "horizontalLeft" ||
+      animationDirection === "horizontalRight"
     ) {
       const interpolatedPosition = interpolate(
         animationValue.value,
@@ -56,31 +57,31 @@ export const useGetGradientTransform = ({
       );
 
       if (
-        animationDirection === 'verticalTop' ||
-        animationDirection === 'verticalDown'
+        animationDirection === "verticalTop" ||
+        animationDirection === "verticalDown"
       ) {
         transform = { translateY: interpolatedPosition };
       } else {
         transform = { translateX: interpolatedPosition };
       }
     } else if (
-      animationDirection === 'diagonalDownRight' ||
-      animationDirection === 'diagonalTopRight' ||
-      animationDirection === 'diagonalDownLeft' ||
-      animationDirection === 'diagonalTopLeft'
+      animationDirection === "diagonalDownRight" ||
+      animationDirection === "diagonalTopRight" ||
+      animationDirection === "diagonalDownLeft" ||
+      animationDirection === "diagonalTopLeft"
     ) {
       const diagonal = Math.sqrt(height * height + width * width);
       const mainDimension = Math.max(height, width);
       const oppositeDimension = mainDimension === width ? height : width;
       const diagonalAngle = Math.acos(mainDimension / diagonal);
       let rotateAngle =
-        animationDirection === 'diagonalDownRight' ||
-        animationDirection === 'diagonalTopLeft'
+        animationDirection === "diagonalDownRight" ||
+        animationDirection === "diagonalTopLeft"
           ? Math.PI / 2 - diagonalAngle
           : Math.PI / 2 + diagonalAngle;
       const additionalRotate =
-        animationDirection === 'diagonalDownRight' ||
-        animationDirection === 'diagonalTopLeft'
+        animationDirection === "diagonalDownRight" ||
+        animationDirection === "diagonalTopLeft"
           ? 2 * diagonalAngle
           : -2 * diagonalAngle;
       const distanceFactor = (diagonal + oppositeDimension) / 2;
@@ -91,24 +92,24 @@ export const useGetGradientTransform = ({
       let xOutputRange: number[];
       let yOutputRange: number[];
       if (
-        animationDirection === 'diagonalDownRight' ||
-        animationDirection === 'diagonalTopLeft'
+        animationDirection === "diagonalDownRight" ||
+        animationDirection === "diagonalTopLeft"
       ) {
         xOutputRange =
-          animationDirection === 'diagonalDownRight'
+          animationDirection === "diagonalDownRight"
             ? [-sinComponent, sinComponent]
             : [sinComponent, -sinComponent];
         yOutputRange =
-          animationDirection === 'diagonalDownRight'
+          animationDirection === "diagonalDownRight"
             ? [-cosComponent, cosComponent]
             : [cosComponent, -cosComponent];
       } else {
         xOutputRange =
-          animationDirection === 'diagonalDownLeft'
+          animationDirection === "diagonalDownLeft"
             ? [-sinComponent, sinComponent]
             : [sinComponent, -sinComponent];
         yOutputRange =
-          animationDirection === 'diagonalDownLeft'
+          animationDirection === "diagonalDownLeft"
             ? [cosComponent, -cosComponent]
             : [-cosComponent, cosComponent];
         if (mainDimension === height && width !== height) {

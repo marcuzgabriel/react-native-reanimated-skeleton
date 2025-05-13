@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Text, StyleSheet, SafeAreaView } from 'react-native';
-import Skeleton from '../Skeleton';
+import React, { useState, useEffect } from "react";
+import { Text, StyleSheet, SafeAreaView } from "react-native";
+import Skeleton from "..";
 
 const SkeletonExample: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,9 +25,9 @@ const SkeletonExample: React.FC = () => {
             marginBottom: 16,
           },
           {
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
             children: [
               {
                 width: 119,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   container: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   normalText: {
     fontSize: 16,

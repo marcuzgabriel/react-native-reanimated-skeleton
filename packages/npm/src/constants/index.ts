@@ -1,16 +1,16 @@
-import { StyleProp, ViewStyle } from 'react-native';
-import { Easing, SharedValue, EasingFn } from 'react-native-reanimated';
+import { StyleProp, ViewStyle } from "react-native";
+import { Easing, SharedValue, EasingFn } from "react-native-reanimated";
 
-type _animationType = 'none' | 'shiver' | 'pulse' | undefined;
+type _animationType = "none" | "shiver" | "pulse" | undefined;
 type _animationDirection =
-  | 'horizontalLeft'
-  | 'horizontalRight'
-  | 'verticalTop'
-  | 'verticalDown'
-  | 'diagonalDownLeft'
-  | 'diagonalDownRight'
-  | 'diagonalTopLeft'
-  | 'diagonalTopRight'
+  | "horizontalLeft"
+  | "horizontalRight"
+  | "verticalTop"
+  | "verticalDown"
+  | "diagonalDownLeft"
+  | "diagonalDownRight"
+  | "diagonalTopLeft"
+  | "diagonalTopRight"
   | undefined;
 
 export interface ICustomViewStyle extends ViewStyle {
@@ -53,10 +53,10 @@ export interface IDirection {
 export const DEFAULT_CONFIG = {
   BORDER_RADIUS: 4,
   DURATION: 1200,
-  ANIMATION_TYPE: 'shiver' as _animationType,
-  ANIMATION_DIRECTION: 'horizontalLeft' as _animationDirection,
-  BONE_COLOR: '#E1E9EE',
-  HIGHLIGHT_COLOR: '#F2F8FC',
+  ANIMATION_TYPE: "shiver" as _animationType,
+  ANIMATION_DIRECTION: "horizontalLeft" as _animationDirection,
+  BONE_COLOR: "#E1E9EE",
+  HIGHLIGHT_COLOR: "#F2F8FC",
   EASING: Easing.bezier(0.5, 0, 0.25, 1),
   LOADING: true,
 };

@@ -1,9 +1,9 @@
-import { useCallback } from 'react';
-import { useGetBoneDimensions } from '../worklets';
-import { ICustomViewStyle } from '../constants';
-import type { ISkeletonProps, IComponentSize } from '../constants';
+import { useCallback } from "react";
+import { useGetBoneDimensions } from "../worklets/useGetBoneDimensions";
+import { ICustomViewStyle } from "../constants";
+import type { ISkeletonProps, IComponentSize } from "../constants";
 
-type UseGetPositionRangeProps = Pick<ISkeletonProps, 'animationDirection'> & {
+type UseGetPositionRangeProps = Pick<ISkeletonProps, "animationDirection"> & {
   boneLayout: ICustomViewStyle;
 };
 
@@ -12,22 +12,22 @@ export const useGetPositionRange = (componentSize: IComponentSize) => {
 
   return useCallback(
     ({ animationDirection, boneLayout }: UseGetPositionRangeProps) => {
-      'worklet';
+      "worklet";
 
       const outputRange: number[] = [];
       const { width, height } = getBoneDimensions(boneLayout);
 
       switch (animationDirection) {
-        case 'horizontalRight':
+        case "horizontalRight":
           outputRange.push(-width, +width);
           break;
-        case 'horizontalLeft':
+        case "horizontalLeft":
           outputRange.push(+width, -width);
           break;
-        case 'verticalDown':
+        case "verticalDown":
           outputRange.push(-height, +height);
           break;
-        case 'verticalTop':
+        case "verticalTop":
           outputRange.push(+height, -height);
           break;
       }

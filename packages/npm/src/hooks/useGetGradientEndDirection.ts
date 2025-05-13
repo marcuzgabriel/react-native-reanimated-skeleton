@@ -1,14 +1,14 @@
-import { useCallback } from 'react';
-import { useGetBoneDimensions } from '../worklets';
+import { useCallback } from "react";
+import { useGetBoneDimensions } from "../worklets";
 import type {
   ISkeletonProps,
   ICustomViewStyle,
   IComponentSize,
-} from '../constants';
+} from "../constants";
 
 type UseGetGradientEndDirectionProps = Pick<
   ISkeletonProps,
-  'animationType' | 'animationDirection'
+  "animationType" | "animationDirection"
 > & {
   boneLayout: ICustomViewStyle;
 };
@@ -24,20 +24,20 @@ export const useGetGradientEndDirection = (componentSize: IComponentSize) => {
     }: UseGetGradientEndDirectionProps) => {
       let direction = { x: 0, y: 0 };
 
-      if (animationType === 'shiver') {
+      if (animationType === "shiver") {
         switch (animationDirection) {
-          case 'horizontalLeft':
-          case 'horizontalRight':
+          case "horizontalLeft":
+          case "horizontalRight":
             direction = { x: 1, y: 0 };
             break;
-          case 'verticalTop':
-          case 'verticalDown':
+          case "verticalTop":
+          case "verticalDown":
             direction = { x: 0, y: 1 };
             break;
-          case 'diagonalTopRight':
-          case 'diagonalDownRight':
-          case 'diagonalDownLeft':
-          case 'diagonalTopLeft': {
+          case "diagonalTopRight":
+          case "diagonalDownRight":
+          case "diagonalDownLeft":
+          case "diagonalTopLeft": {
             const { height, width } = getBoneDimensions(boneLayout);
             return width && height && width > height
               ? { x: 0, y: 1 }

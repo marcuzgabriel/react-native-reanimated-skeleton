@@ -3,17 +3,22 @@
   "author": "Marcuz Gabriel Larsen <marcuzgabriel@gmail.com>",
   "license": "MIT",
   "name": "react-native-reanimated-skeleton",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
     "react-native-linear-gradient": "*",
     "react-native-reanimated": "*"
   },
-  "react-native": "src/ReactNativeReanimatedSkeleton.ts",
-  "main": "lib/index.js",
-  "module": "lib/index.js",
-  "types": "react-native-reanimated-skeleton.d.ts",
+  "main": "lib/module/index",
+  "module": "lib/module/index",
+  "react-native": "src/index",
+  "source": "src/index",
+  "types": "lib/typescript/index.d.ts",
+  "scripts": {
+    "qa-circular-deps": "madge --circular --extensions ts,tsx --exclude __tests__ --exclude __mocks__ --exclude __snapshots__ src",
+    "build": "yarn qa-circular-deps && bob build"
+  },
   "files": [
     "src/",
     "lib/",
@@ -28,5 +33,19 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marcuzgabriel/react-native-reanimated-skeleton.git"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "module",
+        {
+          "esm": true,
+          "jsxRuntime": "classic"
+        }
+      ],
+      "typescript"
+    ]
   }
 }
