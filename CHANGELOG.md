@@ -1,3 +1,16 @@
+# [1.6.0](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.5.1...v1.6.0) (2025-05-13)
+
+
+### Bug Fixes
+
+* Findings and add madge to build process for circular dependencies in barrel files ([5f4069c](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/5f4069c3ef63d82303a864c59073280ebbca5571))
+
+
+### Features
+
+* Add support for lts eslint flat config ([8757cf0](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/8757cf036c798e6fb57787cb8ce2a23ac2f5d2cf))
+* Use react-native-builder-bob ([20aa427](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/commit/20aa427c222a0350fcf813b5592e359a0d02856c))
+
 ## [1.5.1](https://github.com/marcuzgabriel/react-native-reanimated-skeleton/compare/v1.5.0...v1.5.1) (2024-03-17)
 
 
