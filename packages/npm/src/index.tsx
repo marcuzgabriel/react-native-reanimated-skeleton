@@ -99,7 +99,7 @@ const Skeleton: React.FC<ISkeletonProps> = ({
     opacity: opacity.value,
   }));
 
-    const innerContainer = useMemo(() => [containerStyle, hasFadeIn && animatedStyle], [hasFadeIn, containerStyle]);
+    const innerContainer = useMemo(() => [containerStyle, hasFadeIn && animatedStyle], [hasFadeIn, containerStyle, animatedStyle]);
 
   return (
       <View style={styles.root} onLayout={onLayout}>
@@ -127,6 +127,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   }
 });
