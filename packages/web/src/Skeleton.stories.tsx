@@ -3,7 +3,7 @@ import { Text, StyleSheet } from 'react-native';
 import { StoryObj } from '@storybook/react';
 import SkeletonComponent, {
   ISkeletonProps,
-} from 'react-native-reanimated-skeleton';
+} from '../../npm/src';
 
 const styles = StyleSheet.create({
   bigText: {
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 
 const DEFAULT_ARGS: ISkeletonProps = {
   isLoading: true,
-  containerStyle: { alignItems: 'center' },
+  containerStyle: { alignItems: 'center', flex: 1 },
   layout: [
     {
       width: 325,
