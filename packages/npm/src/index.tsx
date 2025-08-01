@@ -99,8 +99,10 @@ const Skeleton: React.FC<ISkeletonProps> = ({
     opacity: opacity.value,
   }));
 
+    const innerContainer = useMemo(() => [containerStyle, hasFadeIn && animatedStyle], [hasFadeIn, containerStyle, animatedStyle]);
+
   return (
-    <View style={containerStyle} onLayout={onLayout}>
+      <View style={styles.root} onLayout={onLayout}>
       {isLoading ? (
         getBones({
           bonesLayout: layout,
@@ -108,7 +110,7 @@ const Skeleton: React.FC<ISkeletonProps> = ({
           generalStyles,
         })
       ) : (
-        <Animated.View style={hasFadeIn ? animatedStyle : {}}>
+        <Animated.View style={innerContainer}>
           {children}
         </Animated.View>
       )}
@@ -119,9 +121,12 @@ const Skeleton: React.FC<ISkeletonProps> = ({
 export default memo(Skeleton);
 
 const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+  },
   container: {
-    alignItems: "center",
     flex: 1,
     justifyContent: "center",
-  },
+    alignItems: "center",
+  }
 });
